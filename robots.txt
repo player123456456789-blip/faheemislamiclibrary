@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faheemislamiclibrary.vercel.app/sitemap.xml
