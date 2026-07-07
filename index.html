@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faheem Digital Islamic Library</title>
+    <!-- Tailwind CSS for Premium Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Premium Arabic (Amiri/Quranic) & Urdu Fallbacks -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Premium Islamic Typography Setup */
+        @font-face {
+            font-family: 'Jameel Noori';
+            src: url('https://fonts.gstatic.com/ea/jameelnoorinastaleeq/v1/JameelNooriNastaleeq.woff2') format('woff2');
+        }
+        
+        .urdu-text {
+            font-family: 'Jameel Noori', 'Noto Nastaliq Urdu', 'Scheherazade New', serif;
+            line-height: 2.2;
+        }
+
+        /* Uthmanic Style Arabic Font Configuration */
+        .arabic-text {
+            font-family: 'Amiri', 'Scheherazade New', serif;
+            font-weight: 700;
+        }
+
+        /* Luxury Golden & Crisp Visual Gradients */
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 30%, #B38728 70%, #AA771C 100%);
+        }
+        
+        .text-gold {
+            background: linear-gradient(to right, #FFE082, #F5B041, #BC7A24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* NO BLACK: Premium Deep Royal Islamic Teal/Navy Background for High Contrast Golden Text */
+        .islamic-bg {
+            background-color: #091d24;
+            background-image: radial-gradient(circle at 50% 50%, #0f2d38 0%, #06151a 100%);
+        }
+
+        /* Responsive 3D Card Perspectivization */
+        .card-3d {
+            perspective: 1000px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card-3d:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(252, 246, 186, 0.2);
+        }
+
+        /* فکسڈ: بائیں سے دائیں چلنے والی اینیمیشن (Left to Right) */
+        @keyframes scrollMarqueeLeftToRight {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* فکسڈ سپیڈ: 140 سیکنڈ (حد سے زیادہ آہستہ اور سکون سے پڑھنے کے لیے) */
+        .animate-marquee {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: scrollMarqueeLeftToRight 140s linear infinite;
+        }
+
+        /* ماؤس اوپر لانے پر لائن خودکار رک جائے گی تاکہ پڑھنا آسان ہو */
+        .ticker-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        .float-animation {
+            animation: float3d 4s ease-in-out infinite;
+        }
+
+        @keyframes float3d {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(252, 246, 186, 0.15);
+        }
+        
+        /* خصوصی شاہی گولڈن فریم ایفیکٹ */
+        .royal-gold-frame {
+            border: 2px double #BF953F;
+            box-shadow: 0 0 15px rgba(252, 246, 186, 0.2);
+        }
+    </style>
+</head>
+<body class="islamic-bg text-gray-100 min-h-screen flex flex-col overflow-x-hidden selection:bg-yellow-600 selection:text-black">
+
+    <!-- 1. HEADER & SUPER-SLOW RUNNING BANNER -->
+    <header class="w-full border-b border-yellow-500/30 bg-[#06151a]/95 backdrop-blur-md sticky top-0 z-50">
+        <!-- Running Line Container -->
+        <div class="w-full bg-[#030b0d] border-b border-yellow-500/20 py-4 overflow-hidden relative flex items-center ticker-container cursor-pointer" title="روکنے کے لیے ماؤس اوپر لائیں">
+            <div class="absolute right-0 bg-gradient-to-l from-[#030b0d] to-transparent w-20 h-full z-20"></div>
+            <div class="absolute left-0 bg-gradient-to-r from-[#030b0d] to-transparent w-20 h-full z-20"></div>
+            
+            <!-- Continuous Super Slow Motion Stream Elements (Quran Arabic -> Urdu -> Hadith) -->
+            <div class="animate-marquee gap-16 items-center select-none z-10" dir="rtl">
+                
+                <!-- 1. Quranic Arabic Ayat (Uthmanic Style Font) -->
+                <span class="arabic-text text-2xl md:text-3xl text-yellow-300 px-2 tracking-wide">
+                    كُنتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ تَأْمُرُونَ بِالْمَعْرُوفِ وَتَنْهَوْنَ عَنِ الْمُنکَرِ وَتُؤْمِنُونَ بِاللَّهِ ۗ وَلَوْ آمَنَ أَهْلُ الْكِتَابِ لَكَانَ خَيْرًا لَّهُم ۚ مِّنْهُمُ الْمُؤْمِنُونَ وَأَکْثَرُهُمُ الْفَاسِقُونَ
+                </span>
+                
+                <!-- 2. Quranic Urdu Translation & Reference -->
+                <span class="urdu-text text-xl md:text-2xl text-amber-100">
+                    "تم بہترین امت ہو جو لوگوں (کی اصلاح) کے لیے پیدا کی گئی ہے، تم نیکی کا حکم دیتے ہو اور برائی سے روکتے ہو اور اللہ پر ایمان رکھتے ہو۔ اور اگر اہل کتاب بھی ایمان لے آتے تو ان کے لیے بہت بہتر ہوتا، ان میں سے کچھ تو ایمان دار ہیں اور ان کے اکثر لوگ نافرمان ہیں۔" <span class="text-yellow-500 font-bold">(سورہ آل عمران)</span>
+                </span>
+                
+                <!-- Divider Element -->
+                <span class="text-yellow-500 text-2xl mx-4">♦</span>
+
+                <!-- 3. Hadith Completion Section -->
+                <span class="urdu-text text-xl md:text-2xl text-amber-100">
+                    حضرت ابو سعید خدری رضی اللہ عنہ سے روایت ہے کہ نبی کریم ﷺ نے فرمایا: "جو بھی مسلمان ایسی دعا کرے جس میں کوئی گناہ کی بات یا رشتہ داری توڑنے (قطع رحمی) کا ذکر نہ ہو، تو اللہ تعالیٰ اس دعا کی برکت سے اسے تین باتوں میں سے ایک چیز ضرور عطا فرماتا ہے: یا تو اس کی دعا دنیا ہی میں فوراً قبول کر لی جاتی ہے۔ یا (اگر دنیا میں نہ دی جائے تو) اس دعا کو آخرت میں اس کے لیے ذخیرہ (ثواب) بنا دیا جاتا ہے۔ یا پھر اس دعا کے بدلے اس پر آنے والی کسی برائی یا مصیبت کو ٹال دیا جاتا ہے۔" یہ سن کر صحابہ کرام نے عرض کیا: "(یا رسول اللہ!) تب تو ہم بہت زیادہ (کثرت سے) دعا مانگا کریں گے!" آپ ﷺ نے فرمایا: "اللہ اس سے بھی زیادہ (دینے والا) ہے۔" <span class="text-yellow-500 font-bold">(صحیح) (الادب المفرد)</span>
+                </span>
+                
+            </div>
+        </div>
+
+        <!-- Main Header Navbar Menu Area -->
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <!-- BRAND LOGO PICTURE CONTAINER -->
+                <div class="w-14 h-14 rounded-full bg-gold-gradient p-[2px] glow-effect flex items-center justify-center overflow-hidden shadow-lg">
+                    <img src="faheem khan.jpg" alt="Logo" class="w-full h-full object-cover rounded-full bg-[#091d24]" onerror="this.src='https://via.placeholder.com/150/091d24/D4AF37?text=Faheem'">
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold tracking-wide uppercase text-yellow-400">
+                    Faheem Digital Islamic Library
+                </h1>
+            </div>
+            <nav class="flex gap-4 text-sm md:text-base font-semibold text-yellow-400/90">
+                <button onclick="switchTab('quran')" class="hover:text-yellow-300 transition-colors py-1.5 px-4 border border-yellow-500/40 rounded-lg bg-yellow-500/10">قرآن</button>
+                <button onclick="switchTab('hadith')" class="hover:text-yellow-300 transition-colors py-1.5 px-4 border border-yellow-500/40 rounded-lg bg-yellow-500/10">حدیث</button>
+                <button onclick="switchTab('dua')" class="hover:text-yellow-300 transition-colors py-1.5 px-4 border border-yellow-500/40 rounded-lg bg-yellow-500/10">دعا</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FLOATING ADMIN PROFILE COMPONENT (فکسڈ پاسپورٹ سائز اور لیفٹ کارنر) -->
+    <div class="fixed bottom-6 left-6 z-40 float-animation group">
+        <div class="w-[53px] h-[70px] bg-gold-gradient p-[2px] glow-effect shadow-2xl transition-all duration-300 transform group-hover:scale-105 flex items-center justify-center overflow-hidden border border-[#091d24]">
+            <img src="faheem khan.jpg" alt="Faheem Profile" class="w-full h-full object-cover bg-[#06151a]" onerror="this.src='https://via.placeholder.com/150/091d24/D4AF37?text=Faheem'">
+        </div>
+        <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#06151a] border border-yellow-500/40 text-[11px] text-yellow-400 font-bold px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md">
+            Admin Profile
+        </div>
+    </div>
+
+    <!-- MAIN INTERACTIVE HUB CONTENT -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-12 relative">
+        
+        <!-- پاسپورٹ سائز فریم - بائیں ہاتھ کے کونے (Left Corner) پر سیٹ کر دیا ہے -->
+        <div class="absolute top-0 left-4 z-30 bg-gold-gradient p-[2px] rounded-lg shadow-xl glow-effect max-w-[90px] md:max-w-[110px]">
+            <div class="bg-[#06151a] p-1 rounded-[6px]">
+                <div class="royal-gold-frame rounded-[4px] overflow-hidden bg-[#0d2a33] aspect-[3/4]">
+                    <img src="faheem khan.jpg" alt="Faheem Khan Passport" class="w-full h-full object-cover block" onerror="this.style.display='none'; document.getElementById('corner-img-placeholder').classList.remove('hidden');">
+                    <div id="corner-img-placeholder" class="hidden py-4 text-center text-yellow-400 text-[10px]">
+                        <i class="fa-solid fa-user block text-xl mb-1"></i>
+                        <span>No Img</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Welcome Brand Header -->
+        <div class="text-center mb-16 pt-6 md:pt-0 relative">
+            <h2 class="text-3xl md:text-5xl text-gold font-bold mb-4 urdu-text pl-20 md:pl-0">خوش آمدید — فہیم ڈیجیٹل اسلامک لائبریری</h2>
+            <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">اعلیٰ معیار کی اسلامی کتب اور مآخذ تک آسان، تیز رفتار اور محفوظ رسائی کے لیے ایک جدید ڈیجیٹل پلیٹ فارم۔</p>
+            <div class="w-24 h-[2px] bg-gold-gradient mx-auto mt-6"></div>
+        </div>
+
+        <!-- 3 MAIN FUNCTIONAL TABS INTERFACE -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- PORTION 1: QURAN PACK TAB -->
+            <div onclick="switchTab('quran')" id="card-quran" class="card-3d bg-[#0d2a33] border border-yellow-500/30 rounded-2xl p-8 text-center cursor-pointer glow-effect group hover:border-yellow-400/60">
+                <div class="w-16 h-16 rounded-full bg-gold-gradient p-[1px] mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div class="w-full h-full bg-[#06151a] rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-book text-2xl text-yellow-400"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-yellow-300 mb-2 urdu-text">حصہ اول: قرآن پاک</h3>
+                <p class="text-gray-300 text-xs sm:text-sm">تفسیر احسن البیان اور بیان القرآن کی تمام جلدوں کا مجموعہ۔</p>
+            </div>
+
+            <!-- PORTION 2: HADITH BOOK TAB -->
+            <div onclick="switchTab('hadith')" id="card-hadith" class="card-3d bg-[#0d2a33] border border-yellow-500/30 rounded-2xl p-8 text-center cursor-pointer glow-effect group hover:border-yellow-400/60">
+                <div class="w-16 h-16 rounded-full bg-gold-gradient p-[1px] mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div class="w-full h-full bg-[#06151a] rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-bookmark text-2xl text-yellow-400"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-yellow-300 mb-2 urdu-text">حصہ دوم: احادیثِ مبارکہ</h3>
+                <p class="text-gray-300 text-xs sm:text-sm">صحیح بخاری اور صحیح مسلم کی تمام مستند جلدوں کا انسائیکلوپیڈیا۔</p>
+            </div>
+
+            <!-- PORTION 3: MASNOON DUA TAB -->
+            <div onclick="switchTab('dua')" id="card-dua" class="card-3d bg-[#0d2a33] border border-yellow-500/30 rounded-2xl p-8 text-center cursor-pointer glow-effect group hover:border-yellow-400/60">
+                <div class="w-16 h-16 rounded-full bg-gold-gradient p-[1px] mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div class="w-full h-full bg-[#06151a] rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-hands-praying text-2xl text-yellow-400"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-yellow-300 mb-2 urdu-text">حصہ سوم: دعائیں اور مناجات</h3>
+                <p class="text-gray-300 text-xs sm:text-sm">مناجات مقبول اور مستند دعاؤں کی اہم کتاب۔</p>
+            </div>
+        </div>
+
+        <!-- DINAMIC BOOK RENDERING CONTENT GRID -->
+        <div class="bg-[#0b242c]/60 border border-yellow-500/20 rounded-3xl p-6 md:p-10 backdrop-blur-md min-h-[400px]">
+            
+            <!-- QURAN SUB-FOLDERS DISPLAY -->
+            <div id="section-quran" class="tab-content hidden">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-8 border-b border-yellow-500/20 pb-4 urdu-text"><i class="fa-solid fa-folder-open me-2 text-xl"></i> قرآن پاک کے فولڈرز</h2>
+                
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold text-yellow-300 mb-6 flex items-center gap-2 urdu-text"><i class="fa-regular fa-folder text-yellow-400"></i> بیان القرآن (7 جلدیں)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="bayan-ul-quran-grid"></div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-300 mb-6 flex items-center gap-2 urdu-text"><i class="fa-regular fa-folder text-yellow-400"></i> احسن البیان (اردو ترجمہ و تفسیر)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="ahsan-ul-bayan-grid"></div>
+                </div>
+            </div>
+
+            <!-- HADITH SUB-FOLDERS DISPLAY -->
+            <div id="section-hadith" class="tab-content hidden">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-8 border-b border-yellow-500/20 pb-4 urdu-text"><i class="fa-solid fa-folder-open me-2 text-xl"></i> احادیثِ مبارکہ کے فولڈرز</h2>
+                
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold text-yellow-300 mb-6 flex items-center gap-2 urdu-text"><i class="fa-regular fa-folder text-yellow-400"></i> صحیح بخاری (6 جلدیں)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="bukhari-grid"></div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-300 mb-6 flex items-center gap-2 urdu-text"><i class="fa-regular fa-folder text-yellow-400"></i> صحیح مسلم (5 جلدیں)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="muslim-grid"></div>
+                </div>
+            </div>
+
+            <!-- DUA SUB-FOLDERS DISPLAY -->
+            <div id="section-dua" class="tab-content hidden">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-8 border-b border-yellow-500/20 pb-4 urdu-text"><i class="fa-solid fa-folder-open me-2 text-xl"></i> مسنون دعائیں اور مناجات</h2>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-300 mb-6 flex items-center gap-2 urdu-text"><i class="fa-regular fa-folder text-yellow-400"></i> مناجاتِ مقبول</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="dua-grid"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- LIGHTWEIGHT STREAMING MODAL IFRAME FOR READING ONLINE -->
+    <div id="pdf-modal" class="fixed inset-0 bg-[#06151a]/95 z-50 hidden flex flex-col items-center justify-center p-4">
+        <div class="w-full max-w-5xl h-full flex flex-col bg-[#0d2a33] border border-yellow-500/40 rounded-2xl overflow-hidden glow-effect">
+            <div class="bg-[#06151a] px-6 py-4 border-b border-yellow-500/20 flex flex-row-reverse justify-between items-center">
+                <button onclick="closePdfModal()" class="text-gray-400 hover:text-yellow-400 text-2xl transition-colors"><i class="fa-solid fa-xmark"></i></button>
+                <h3 id="modal-title" class="text-xl font-bold text-yellow-300 urdu-text">کتاب کا نام</h3>
+                <div class="text-xs text-yellow-400 border border-yellow-500/30 px-3 py-1 rounded-full bg-yellow-500/5">
+                    <i class="fa-solid fa-bolt me-1 animate-pulse"></i> 50MB Performance Mode
+                </div>
+            </div>
+            <div class="flex-grow w-full bg-[#030b0d] relative flex items-center justify-center">
+                <div id="pdf-loader" class="absolute flex flex-col items-center gap-4 text-center z-0">
+                    <div class="w-12 h-12 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
+                    <p class="text-yellow-400/80 text-sm font-semibold">لوڈ ہو رہا ہے...</p>
+                </div>
+                <iframe id="pdf-frame" class="w-full h-full border-none z-10 hidden" src="" onload="document.getElementById('pdf-loader').classList.add('hidden'); this.classList.remove('hidden')"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER BANNER -->
+    <footer class="bg-[#030b0d] border-t border-yellow-500/20 py-8 text-center text-sm text-gray-500">
+        <p class="mb-2 text-yellow-600/70">© 2026 فہیم ڈیجیٹل اسلامک لائبریری۔ تمام حقوق محفوظ ہیں۔</p>
+        <p class="text-xs">Developed with premium contrast layout and modern streaming architecture.</p>
+    </footer>
+
+    <!-- INTERACTION LOGIC AND ENGINE SCRIPT -->
+    <script>
+        // کتب کی فہرست
+        const dataSet = {
+            bayanQuran: [
+                "Bayan_ul_Quran_1.pdf", 
+                "Bayan_ul_Quran_2.pdf", 
+                "Bayan_ul_Quran_3.pdf", 
+                "Bayan_ul_Quran_4.pdf", 
+                "Bayan_ul_Quran_5.pdf", 
+                "Bayan_ul_Quran_6.pdf", 
+                "Bayan_ul_Quran_7.pdf"
+            ],
+            ahsanBayan: [
+                "Ahsan ul Bayan URDU.pdf"
+            ],
+            bukhari: [
+                "Sahih-Bukhari-Jilad-1.pdf", 
+                "Sahih-Bukhari-Jilad-2.pdf", 
+                "Sahih-Bukhari-Jilad-3.pdf",
+                "Sahih-Bukhari-Jilad-4.pdf", 
+                "Sahih-Bukhari-Jilad-5.pdf", 
+                "Sahih-Bukhari-Jilad-6.pdf"
+            ],
+            muslim: [
+                "Sahih_Muslim_Vol_1.pdf", 
+                "Sahih_Muslim_Vol_2.pdf", 
+                "Sahih_Muslim_Vol_3.pdf",
+                "Saheeh_Muslim_Vol_4.pdf", 
+                "Sahih_Muslim_Vol_5.pdf"
+            ],
+            dua: [
+                "Munajat e Maqbool.pdf"
+            ]
+        };
+
+        const getStreamUrl = (name) => name;
+        const getDownloadUrl = (name) => name;
+
+        // Card UI Grid Builder Engine (ترمیم شدہ: بٹنز اب بڑے، واضح اور پڑھنے میں آسان ہیں)
+        function createBookCards(containerId, list) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = "";
+            list.forEach(fileName => {
+                const displayName = fileName.replace(/_/g, ' ').replace(/-/g, ' ').replace('.pdf', '');
+                
+                const card = document.createElement('div');
+                card.className = "bg-gold-gradient p-[1px] rounded-xl shadow-lg transition-transform hover:-translate-y-1";
+                card.innerHTML = `
+                    <div class="bg-[#06151a] p-5 rounded-[11px] h-full flex flex-col justify-between items-center text-center">
+                        <div class="mb-4">
+                            <i class="fa-solid fa-file-pdf text-4xl text-yellow-400 mb-2 block"></i>
+                            <h4 class="text-gray-100 font-bold tracking-wide text-base md:text-lg">${displayName}</h4>
+                            <span class="text-[10px] uppercase text-gray-400 tracking-widest mt-1 block">Max Size: 50MB Optimized</span>
+                        </div>
+                        <div class="w-full flex flex-col sm:flex-row gap-3 mt-4">
+                            <button onclick="openPdfModal('${fileName}')" class="w-full bg-gold-gradient text-black font-extrabold text-sm py-3 px-4 rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-eye text-base"></i> Online Read
+                            </button>
+                            <a href="${getDownloadUrl(fileName)}" download="${fileName}" class="w-full bg-[#0d2a33] border border-yellow-500/40 text-yellow-400 font-bold text-sm py-3 px-4 rounded-lg hover:bg-yellow-500/10 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-download text-base"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Tab Switcher Functional Management
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`section-${tabId}`).classList.remove('hidden');
+            
+            document.querySelectorAll('.card-3d').forEach(el => el.classList.remove('border-yellow-400'));
+            const activeCard = document.getElementById(`card-${tabId}`);
+            if(activeCard) {
+                activeCard.classList.add('border-yellow-400');
+            }
+        }
+
+        function openPdfModal(fileName) {
+            const displayName = fileName.replace(/_/g, ' ').replace(/-/g, ' ').replace('.pdf', '');
+            document.getElementById('modal-title').textContent = displayName;
+            document.getElementById('pdf-loader').classList.remove('hidden');
+            const frame = document.getElementById('pdf-frame');
+            frame.classList.add('hidden');
+            frame.src = getStreamUrl(fileName);
+            document.getElementById('pdf-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePdfModal() {
+            document.getElementById('pdf-modal').classList.add('hidden');
+            document.getElementById('pdf-frame').src = "";
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createBookCards('bayan-ul-quran-grid', dataSet.bayanQuran);
+            createBookCards('ahsan-ul-bayan-grid', dataSet.ahsanBayan);
+            createBookCards('bukhari-grid', dataSet.bukhari);
+            createBookCards('muslim-grid', dataSet.muslim);
+            createBookCards('dua-grid', dataSet.dua);
+            switchTab('quran');
+        });
+    </script>
+</body>
+</html>
